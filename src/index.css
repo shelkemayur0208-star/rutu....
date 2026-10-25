@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --brand-ivory: #FAF7F2;
+    --brand-cream: #F5EFEB;
+    --brand-sand: #EFE8DF;
+    --brand-brown: #2B1E19;
+    --brand-espresso: #1A110D;
+    --brand-gold: #C5A059;
+    --brand-gold-light: #E0C797;
+    --brand-gold-dark: #987834;
+    --brand-text: #2B1E19;
+    --brand-muted: #6B5B53;
+  }
+
+  * {
+    border-color: #EFE8DF;
+  }
+
+  body {
+    background-color: #FAF7F2;
+    color: #2B1E19;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+  }
+
+  #root {
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.font-serif-luxury {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.font-cinzel {
+  font-family: 'Cinzel', serif;
+}
+
+.font-sans-clean {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F5EFEB;
+}
+::-webkit-scrollbar-thumb {
+  background: #D9CBBF;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C5A059;
+}
+
+/* Glass effect */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.glass-dark {
+  background: rgba(26, 17, 13, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* Shimmer gold gradient */
+.gold-gradient {
+  background: linear-gradient(135deg, #C5A059 0%, #E8D3A7 50%, #B89248 100%);
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #A47D2E 0%, #C5A059 50%, #8C651E 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Print styles for POS receipt */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #printable-receipt, #printable-receipt * {
+    visibility: visible;
+  }
+  #printable-receipt {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 80mm;
+    margin: 0;
+    padding: 10px;
+    background: white !important;
+    color: black !important;
+  }
+}
